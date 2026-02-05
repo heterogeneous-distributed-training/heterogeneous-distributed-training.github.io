@@ -19,7 +19,7 @@ type MenuSection = {
   items: MenuItem[];
 };
 
-// 通用示例目录结构
+// 更新后的目录结构
 const sidebarItems: MenuSection[] = [
   {
     title: "Getting Started",
@@ -53,20 +53,13 @@ const sidebarItems: MenuSection[] = [
       { title: "Types", href: "/api/types" },
     ],
   },
-  {
-    title: "Community",
-    items: [
-      { title: "Contributing", href: "/community/contributing" },
-      { title: "Release Notes", href: "/release-notes" },
-    ],
-  },
 ];
 
 export function DocsLayout({ children }: DocsLayoutProps) {
   const [location] = useLocation();
   
   // 状态管理：记录哪些 section 是展开的
-  // 默认全部展开，或者根据需求默认只展开第一个
+  // 默认全部展开
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>(
     sidebarItems.reduce((acc, section) => ({ ...acc, [section.title]: true }), {})
   );
