@@ -25,24 +25,21 @@ const sidebarItems: MenuSection[] = [
     title: "Getting Started",
     items: [
       { title: "Introduction", href: "/" },
-      { title: "Installation", href: "/getting-started/installation" },
-      { title: "Quick Start", href: "/getting-started/quick-start" },
+      { title: "Quick Start", href: "/quick-start" },
     ],
   },
   {
     title: "Core Concepts",
     items: [
       { title: "Architecture", href: "/concepts/architecture" },
-      { title: "Data Flow", href: "/concepts/data-flow" },
-      { title: "Configuration", href: "/concepts/configuration" },
+      { title: "Heterogeneous Parallelism", href: "/concepts/heterogeneous-parallelism" },
     ],
   },
   {
-    title: "Guides",
+    title: "Configuration",
     items: [
-      { title: "Basic Usage", href: "/guides/basic" },
-      { title: "Advanced Features", href: "/guides/advanced" },
-      { title: "Best Practices", href: "/guides/best-practices" },
+      { title: "Training Config", href: "/configuration/training" },
+      { title: "Cluster Setup", href: "/configuration/cluster" },
     ],
   },
   {

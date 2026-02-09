@@ -7,6 +7,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import GenericDoc from "./pages/GenericDoc";
 import Introduction from "./pages/Introduction";
+import QuickStart from "./pages/QuickStart";
 import { DocsLayout } from "./components/DocsLayout";
 
 // 使用 Hash 路由以兼容 GitHub Pages 静态托管
@@ -33,6 +34,9 @@ function AppRoutes() {
       {/* 首页现在是 Introduction */}
       <Route path="/" component={withLayout(Introduction)} />
       
+      {/* Quick Start 独立页面 */}
+      <Route path="/quick-start" component={withLayout(QuickStart)} />
+      
       {/* 
         通配符路由：匹配所有其他文档路径
         注意：wouter 的通配符匹配比较简单，我们这里列举主要的一级路径前缀
@@ -40,9 +44,8 @@ function AppRoutes() {
       */}
       <Route path="/getting-started/:sub*" component={withLayout(GenericDoc)} />
       <Route path="/concepts/:sub*" component={withLayout(GenericDoc)} />
-      <Route path="/guides/:sub*" component={withLayout(GenericDoc)} />
+      <Route path="/configuration/:sub*" component={withLayout(GenericDoc)} />
       <Route path="/api/:sub*" component={withLayout(GenericDoc)} />
-      <Route path="/community/:sub*" component={withLayout(GenericDoc)} />
       
       {/* 404 页面 */}
       <Route component={NotFound} />
