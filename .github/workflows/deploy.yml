@@ -21,20 +21,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      # 👇 修改了这里：去掉了 cache 配置，不再依赖 lock 文件
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm ci
 
       - name: Build
-        run: pnpm vite build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
