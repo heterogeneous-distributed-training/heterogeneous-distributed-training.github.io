@@ -31,7 +31,7 @@ export default function QuickStart() {
             Setup
           </h2>
           <p className="text-lg leading-7">
-            We recommend using NGC's PyTorch container (e.g., <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch" target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4">nvcr.io/nvidia/pytorch:24.02-py3</a> ) for setup.
+            We recommend using NGC's PyTorch container (e.g., <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch" target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4">nvcr.io/nvidia/pytorch:24.02-py3</a>) for setup.
           </p>
           <ol className="list-decimal list-inside space-y-6 text-lg leading-7 ml-4">
             <li>
@@ -66,7 +66,7 @@ export default function QuickStart() {
           </h2>
           <p className="text-lg leading-7">Before running training tasks, prepare the following data files:</p>
           <ol className="list-decimal list-inside space-y-2 text-lg leading-7 ml-4">
-            <li><strong>Tokenizer Model</strong>: Download or prepare a tokenizer model file (e.g., <code>tokenizer.model</code> ).</li>
+            <li><strong>Tokenizer Model</strong>: Download or prepare a tokenizer model file (e.g., <code>tokenizer.model</code>).</li>
             <li><strong>Training Dataset</strong>: Prepare training data in Megatron-LM format (<code>.bin</code> and <code>.idx</code> files).</li>
           </ol>
           <p className="text-lg leading-7 mt-4">Update the following paths in <code>run.sh</code> according to your data location:</p>
@@ -93,8 +93,7 @@ mkdir -p /workspace/tensorboard_logs`}</code></pre>
           <p className="text-lg leading-7">SynerFuse provides a simple bash script for running pre-training tasks. To start distributed heterogeneous training:</p>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm font-mono"><code>{`cd SynerFuse
 bash run.sh`}</code></pre>
-          <p className="text-lg leading-7 mt-4">The script launches a distributed training job with default configurations.
-          </p>
+          <p className="text-lg leading-7 mt-4">The script launches a distributed training job with default configurations.</p>
           <p className="text-lg leading-7">Monitor training progress through the console output and (optionally) TensorBoard if enabled.</p>
         </section>
       </div>

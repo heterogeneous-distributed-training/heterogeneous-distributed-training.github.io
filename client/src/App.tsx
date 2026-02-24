@@ -8,6 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import GenericDoc from "./pages/GenericDoc";
 import Introduction from "./pages/Introduction";
 import QuickStart from "./pages/QuickStart";
+import Architecture from "./pages/Architecture";
 import { DocsLayout } from "./components/DocsLayout";
 
 // 使用 Hash 路由以兼容 GitHub Pages 静态托管
@@ -36,6 +37,7 @@ function AppRoutes() {
       
       {/* Quick Start 独立页面 */}
       <Route path="/quick-start" component={withLayout(QuickStart)} />
+      <Route path="/concepts/architecture" component={withLayout(Architecture)} />
       
       {/* 
         通配符路由：匹配所有其他文档路径

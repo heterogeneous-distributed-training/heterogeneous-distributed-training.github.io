@@ -38,9 +38,9 @@ export default function Introduction() {
             Currently, the "resource wall" between different GPUs makes it difficult to build one heterogeneous resource pool for Large-scale models training. Heterogeneous distributed training becomes a pressing challenge for the industry to solve. We brought up a cross-architecture unified heterogeneous training framework <strong>SynerFuse</strong> to deal with the problem.
           </p>
           <p className="text-lg leading-7">
-            SynerFuse enables multiple LLMs deployed and trained on multiple types of GPUs. The <strong>Inhomogeneous Task Distribution (ITD )</strong> algorithm for heterogeneous training task splitting is innovatively proposed, which supports heterogeneous data parallelism (DP) and heterogeneous pipeline parallelism (PP), and realizes the adaptive adjustment of parameters such as size and number of micro batches in DP, stages and layers in PP on heterogeneous GPUs.
+            SynerFuse enables multiple LLMs deployed and trained on multiple types of GPUs. The <strong>Inhomogeneous Task Distribution (ITD)</strong> algorithm for heterogeneous training task splitting is innovatively proposed, which supports heterogeneous data parallelism (DP) and heterogeneous pipeline parallelism (PP), and realizes the adaptive adjustment of parameters such as size and number of micro batches in DP, stages and layers in PP on heterogeneous GPUs.
           </p>
-
+          
           <Card className="my-6 bg-muted/50 border-none">
             <CardContent className="pt-6">
               <p className="font-medium mb-2 text-lg">Performance Verification</p>
