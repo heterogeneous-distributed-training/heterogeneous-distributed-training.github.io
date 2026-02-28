@@ -102,7 +102,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
       {/* Sidebar - Hidden on mobile, fixed on desktop */}
       <aside className="hidden md:block w-64 border-r bg-sidebar fixed h-screen overflow-hidden left-0 top-0 z-40">
         <div className="h-full flex flex-col">
-          <div className="p-6 border-b">
+          <div className="p-6 border-b flex-shrink-0">
             <Link href="/">
               <div className="font-bold text-xl text-primary cursor-pointer">
                 HDT Docs
@@ -113,8 +113,8 @@ export function DocsLayout({ children }: DocsLayoutProps) {
             </div>
           </div>
           
-          <ScrollArea className="flex-1 py-4">
-            <div className="px-3 space-y-1">
+          <ScrollArea className="flex-1 overflow-hidden">
+            <div className="px-3 py-4 space-y-1 pr-4">
               {sidebarItems.map((section, i) => (
                 <div key={i} className="mb-2">
                   {/* 一级标题 - 可点击折叠 */}
@@ -122,11 +122,11 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                     onClick={() => toggleSection(section.title)}
                     className="w-full flex items-center justify-between px-3 py-2 text-sm font-semibold text-foreground/90 hover:bg-muted/50 rounded-md transition-colors group"
                   >
-                    <span>{section.title}</span>
+                    <span className="truncate">{section.title}</span>
                     {expandedSections[section.title] ? (
-                      <ChevronDown className="h-4 w-4 text-muted-foreground group-hover:text-foreground" />
+                      <ChevronDown className="h-4 w-4 text-muted-foreground group-hover:text-foreground flex-shrink-0 ml-2" />
                     ) : (
-                      <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground" />
+                      <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground flex-shrink-0 ml-2" />
                     )}
                   </button>
                   
@@ -137,11 +137,12 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                         <Link key={j} href={item.href}>
                           <div
                             className={cn(
-                              "px-3 py-1.5 text-sm rounded-md transition-colors cursor-pointer block truncate",
+                              "px-3 py-1.5 text-xs rounded-md transition-colors cursor-pointer block",
                               location === item.href
                                 ? "bg-primary/10 text-primary font-medium"
                                 : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                             )}
+                            title={item.title}
                           >
                             {item.title}
                           </div>
@@ -154,7 +155,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
             </div>
           </ScrollArea>
           
-          <div className="p-4 border-t text-xs text-muted-foreground flex justify-between items-center">
+          <div className="p-4 border-t text-xs text-muted-foreground flex-shrink-0">
             <span>© 2026 HDT Team</span>
           </div>
         </div>
