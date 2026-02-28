@@ -37,16 +37,18 @@ function AppRoutes() {
       
       {/* Quick Start 独立页面 */}
       <Route path="/quick-start" component={withLayout(QuickStart)} />
-      <Route path="/concepts/architecture" component={withLayout(Architecture)} />
+      <Route path="/quick-start/architecture" component={withLayout(Architecture)} />
+      <Route path="/quick-start/heterogeneous-parallelism" component={withLayout(GenericDoc)} />
       
       {/* 
         通配符路由：匹配所有其他文档路径
         注意：wouter 的通配符匹配比较简单，我们这里列举主要的一级路径前缀
         或者直接使用 GenericDoc 作为默认的回退（在 NotFound 之前）
       */}
-      <Route path="/getting-started/:sub*" component={withLayout(GenericDoc)} />
-      <Route path="/concepts/:sub*" component={withLayout(GenericDoc)} />
-      <Route path="/configuration/:sub*" component={withLayout(GenericDoc)} />
+      <Route path="/hyperparameter/:sub*" component={withLayout(GenericDoc)} />
+      <Route path="/models/:sub*" component={withLayout(GenericDoc)} />
+      <Route path="/hardware/:sub*" component={withLayout(GenericDoc)} />
+      <Route path="/advanced/:sub*" component={withLayout(GenericDoc)} />
       <Route path="/api/:sub*" component={withLayout(GenericDoc)} />
       
       {/* 404 页面 */}

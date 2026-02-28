@@ -22,24 +22,48 @@ type MenuSection = {
 // 更新后的目录结构
 const sidebarItems: MenuSection[] = [
   {
-    title: "Getting Started",
+    title: "Quick Start",
     items: [
       { title: "Introduction", href: "/" },
-      { title: "Quick Start", href: "/quick-start" },
+      { title: "Getting Started", href: "/quick-start" },
+      { title: "Architecture", href: "/quick-start/architecture" },
     ],
   },
   {
-    title: "Core Concepts",
+    title: "Hyperparameter Description",
     items: [
-      { title: "Architecture", href: "/concepts/architecture" },
-      { title: "Heterogeneous Parallelism", href: "/concepts/heterogeneous-parallelism" },
+      { title: "tensor-model-parallel-size", href: "/hyperparameter/tensor-model-parallel-size" },
+      { title: "pipeline-model-parallel-size", href: "/hyperparameter/pipeline-model-parallel-size" },
     ],
   },
   {
-    title: "Configuration",
+    title: "Adding New Models",
     items: [
-      { title: "Training Config", href: "/configuration/training" },
-      { title: "Cluster Setup", href: "/configuration/cluster" },
+      { title: "Llama-7B", href: "/models/llama-7b" },
+      { title: "Qwen2.5-2.7B", href: "/models/qwen2.5-2.7b" },
+      { title: "Jiutian-13.9B", href: "/models/jiutian-13.9b" },
+      { title: "Deepseek-1.7B", href: "/models/deepseek-1.7b" },
+      { title: "Mistral-6.1B", href: "/models/mistral-6.1b" },
+    ],
+  },
+  {
+    title: "Hardware Support",
+    items: [
+      { title: "List Of Supported Domestic GPUs", href: "/hardware/supported-gpus" },
+      { title: "Environment Configuration And Software Stack Requirements", href: "/hardware/environment-config" },
+      { title: "Key Hyperparameters And Tuning Recommendations For Domestic GPUs", href: "/hardware/tuning-recommendations" },
+      { title: "Performance Benchmarks And Empirical Data (Examples)", href: "/hardware/benchmarks" },
+      { title: "Frequently Asked Questions And Solutions", href: "/hardware/faq" },
+    ],
+  },
+  {
+    title: "Advanced Features",
+    items: [
+      { title: "Heterogeneous Pipeline Parallelism", href: "/advanced/pipeline-parallelism" },
+      { title: "Heterogeneous Data Parallelism", href: "/advanced/data-parallelism" },
+      { title: "Heterogeneous Tensor Parallelism", href: "/advanced/tensor-parallelism" },
+      { title: "Heterogeneous Expert Parallelism", href: "/advanced/expert-parallelism" },
+      { title: "Heterogeneous Context Parallelism", href: "/advanced/context-parallelism" },
     ],
   },
   {
