@@ -19,41 +19,34 @@ type MenuSection = {
   items: MenuItem[];
 };
 
-// 更新后的目录结构
+// 按照 SynerFuseDoc.md 更新的目录结构
 const sidebarItems: MenuSection[] = [
   {
     title: "Quick Start",
     items: [
       { title: "Introduction", href: "/" },
-      { title: "Getting Started", href: "/quick-start" },
-      { title: "Architecture", href: "/quick-start/architecture" },
+      { title: "Getting Start", href: "/quick-start" },
     ],
   },
   {
-    title: "Hyperparameter Description",
-    items: [
-      { title: "tensor-model-parallel-size", href: "/hyperparameter/tensor-model-parallel-size" },
-      { title: "pipeline-model-parallel-size", href: "/hyperparameter/pipeline-model-parallel-size" },
-    ],
+    title: "Parameter Explanation",
+    items: [],
   },
   {
-    title: "Adding New Models",
+    title: "Models",
     items: [
-      { title: "Llama-7B", href: "/models/llama-7b" },
+      { title: "LLaMA-7B", href: "/models/llama-7b" },
       { title: "Qwen2.5-2.7B", href: "/models/qwen2.5-2.7b" },
-      { title: "Jiutian-13.9B", href: "/models/jiutian-13.9b" },
-      { title: "Deepseek-1.7B", href: "/models/deepseek-1.7b" },
+      { title: "DeepSeek-1.7B", href: "/models/deepseek-1.7b" },
       { title: "Mistral-6.1B", href: "/models/mistral-6.1b" },
+      { title: "Jiutian-13.9B", href: "/models/jiutian-13.9b" },
     ],
   },
   {
     title: "Hardware Support",
     items: [
-      { title: "List Of Supported Domestic GPUs", href: "/hardware/supported-gpus" },
-      { title: "Environment Configuration And Software Stack Requirements", href: "/hardware/environment-config" },
-      { title: "Key Hyperparameters And Tuning Recommendations For Domestic GPUs", href: "/hardware/tuning-recommendations" },
-      { title: "Performance Benchmarks And Empirical Data (Examples)", href: "/hardware/benchmarks" },
-      { title: "Frequently Asked Questions And Solutions", href: "/hardware/faq" },
+      { title: "List Of Supported GPUs", href: "/hardware/supported-gpus" },
+      { title: "Environment Configuration and Software Requirements", href: "/hardware/environment-config" },
     ],
   },
   {
@@ -123,10 +116,12 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                     className="w-full flex items-center justify-between px-3 py-2 text-sm font-semibold text-foreground/90 hover:bg-muted/50 rounded-md transition-colors group"
                   >
                     <span className="truncate">{section.title}</span>
-                    {expandedSections[section.title] ? (
-                      <ChevronDown className="h-4 w-4 text-muted-foreground group-hover:text-foreground flex-shrink-0 ml-2" />
-                    ) : (
-                      <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground flex-shrink-0 ml-2" />
+                    {section.items.length > 0 && (
+                      expandedSections[section.title] ? (
+                        <ChevronDown className="h-4 w-4 text-muted-foreground group-hover:text-foreground flex-shrink-0 ml-2" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground flex-shrink-0 ml-2" />
+                      )
                     )}
                   </button>
                   
